@@ -1,0 +1,145 @@
+/* General Styles */
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+header {
+    text-align: center;
+    padding: 1em;
+    background-color: #CFB53B;
+}
+footer {
+    position: fixed;
+    padding: 1em;
+    background-color: #CFB53B;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+header .logo {
+    width: 100px;
+    margin-bottom: 0.5em;
+    position: fixed;
+    left: 20px;;
+    top:0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Collapsible Sections */
+.collapse-button {
+    width: 100%;
+    background-color: #3a3a3a;
+    color: #f0f0f0;
+    padding: 1em;
+    font-size: 1.2em;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.collapse-button:after {
+    content: '\25BC'; /* Down arrow */
+}
+
+.collapse-button.active:after {
+    content: '\25B2'; /* Up arrow */
+}
+
+.content {
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    max-height: 0;
+    opacity: 0;
+}
+
+.content.active {
+    max-height: 100%;
+    opacity: 1;
+    padding: 1em 0;
+}
+
+/* Sound Grid */
+.sound-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+
+/* Sound Button Styles */
+
+.sound-button {
+    flex: 1 1 calc(25% - 1em);
+    background-color: #3a3a3a;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;        /* Vertically center the content */
+    justify-content: center;    /* Horizontally center the content */
+    position: relative;
+}
+
+.sound-button:hover {
+    background-color: #505050;
+}
+
+.sound-icon {
+    width: 35px;
+    height: 35px;
+    margin-right: auto;         /* Pushes the text to the center */
+    position: absolute;
+    left: 10px;                 /* Position icon on the left */
+}
+
+.sound-name {
+    font-size: 1em;
+    color: #f0f0f0;
+    text-align: center;
+    flex: 1;                    /* Allow the text to occupy available space */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sound-button {
+        flex: 1 1 calc(50% - 1em);
+    }
+}
+
+@media (max-width: 480px) {
+    .sound-button {
+        flex: 1 1 100%;
+    }
+}
+
+
