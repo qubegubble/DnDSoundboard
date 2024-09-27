@@ -87,8 +87,31 @@ function setupCollapsibleSections() {
     });
 }
 
+document.querySelectorAll('.collapse-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.classList.toggle('show');
+
+        if (content.classList.contains('show')) {
+            content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            content.style.maxHeight = null;
+        }
+    });
+});
+
 // Initialize the page
 window.onload = function() {
     createSoundButtons();
     setupCollapsibleSections();
 };
+
+const fireplace = document.querySelector('.fireplace');
+
+for (let i = 0; i < 20; i++) { // Adjust the number of sparks
+    const spark = document.createElement('div');
+    spark.classList.add('fireplace__spark');
+    spark.style.left = `${Math.random() * 100}%`; // Random horizontal position
+    spark.style.animationDelay = `${Math.random() * 2}s`; // Random delay
+    fireplace.appendChild(spark);
+}
